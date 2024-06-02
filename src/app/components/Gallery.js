@@ -1,29 +1,6 @@
-// import React from 'react';
-// import { Grid } from '@mui/material';
-// import ImageGrid from './ImageGrid';
-
-// const collections = {
-//   kyoto: ['kyoto1.jpg', 'kyoto2.jpg', 'kyoto3.jpg', 'kyoto4.jpg', 'kyoto5.jpg', 'kyoto6.jpg', 'kyoto7.jpg', 'kyoto8.jpg', 'kyoto9.jpg', 'kyoto10.jpg', 'kyoto11.jpg', 'kyoto12.jpg', 'kyoto13.jpg', 'kyoto14.jpg', 'kyoto15.jpg', 'kyoto16.jpg', 'kyoto17.jpg', 'kyoto18.jpg', 'kyoto19.jpg', 'kyoto20.jpg', 'kyoto21.jpg', 'kyoto22.jpg', 'kyoto23.jpg', 'kyoto24.jpg'],
-// };
-
-// const Gallery = ({ collection }) => {
-//   const images = collections[collection];
-
-//   return (
-//     <Grid container spacing={2} justifyContent="center" marginTop={2}>
-//       {images.map((image, index) => (
-//         <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-//           <ImageGrid image={image} collection={collection} />
-//         </Grid>
-//       ))}
-//     </Grid>
-//   );
-// };
-
-// export default Gallery;
-
 import React, { useState } from 'react';
 import { Grid, Dialog, DialogContent, IconButton } from '@mui/material';
+import Image from 'next/image';
 import CloseIcon from '@mui/icons-material/Close';
 import ImageGrid from './ImageGrid';
 
@@ -69,8 +46,8 @@ const Gallery = ({ collection }) => {
           >
             <CloseIcon />
           </IconButton>
-          <img
-            src={`/images/${collection}/${selectedImage}`}
+          <Image
+            src={`${selectedImage}`}
             alt={selectedImage}
             style={{ width: '100%', height: 'auto' }}
           />
