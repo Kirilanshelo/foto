@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Grid, Dialog, DialogContent, IconButton } from '@mui/material';
 import Image from 'next/image';
@@ -15,7 +16,7 @@ const collections = {
   thailandia: ['thai1.jpg', 'thai2.jpg', 'thai3.jpg', 'thai4.jpg', 'thai5.jpg', 'thai6.jpg']
 };
 
-const Gallery = ({ collection }) => {
+const PhotoGallery = ({ collection }) => {
   const images = collections[collection];
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
@@ -44,17 +45,19 @@ const Gallery = ({ collection }) => {
             onClick={handleClose}
             sx={{ position: 'absolute', top: 8, right: 8, color: 'white' }}
           >
-            <CloseIcon />
+            X
           </IconButton>
-          <Image
-            src={`${selectedImage}`}
-            alt={selectedImage}
-            style={{ width: '100%', height: 'auto' }}
-          />
+          <div style={{ position: 'relative', width: '100vw', height: '80vh', background: 'transparent'}}>
+            <img
+              src={`/images/${collection}/${selectedImage}`}
+              alt={selectedImage}
+              style={{ 'max-width': '100%', 'max-height': '100%' }}
+            />
+          </div>
         </DialogContent>
       </Dialog>
     </>
   );
 };
 
-export default Gallery;
+export default PhotoGallery;

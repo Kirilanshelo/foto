@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/my-honeymoon-gallery",
+  basePath: "",
   output: "export",  // <=== enables static exports
-  reactStrictMode: true,
+  images: { unoptimized: true }
+  // reactStrictMode: true,
 };
 
 export default nextConfig;

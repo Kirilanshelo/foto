@@ -1,10 +1,10 @@
-"use client"
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import { Container, Typography, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-import Gallery from './components/Gallery';
+import PhotoGallery from './components/Gallery';
 
 const Home = () => {
-  const [collection, setCollection] = React.useState('tokyo');
+  const [collection, setCollection] = useState('tokyo');
 
   const handleCollectionChange = (event) => {
     setCollection(event.target.value);
@@ -36,7 +36,7 @@ const Home = () => {
             <MenuItem value="thailandia">thailandia</MenuItem>
           </Select>
         </FormControl>
-        <Gallery collection={collection} />
+        <PhotoGallery collection={collection} />
       </Container>
   );
 };
